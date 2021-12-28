@@ -13,14 +13,15 @@ public class UpdateUserDto {
     @NotBlank(message = "Name cannot be blank")
     private String name;
 
+    @NotBlank(message = "Email cannot be blank")
     @Email(message = "Email should be valid")
     private String email;
 
-    @NotNull(message = "Password must be between 8 to 15 characters")
-    @Size(min = 8, max = 15)
+    @NotNull(message = "Password cannot be null")
+    @Size(min = 8, message = "Password should have at least 8 characters")
     private String password;
 
-    @NotNull(message = "Password must be between 8 to 15 characters")
-    @Size(min = 8, max = 15)
+    @NotNull(message = "Password cannot be null")
+    @Size(min = 8, message = "Password should have at least 8 characters")
     private String confirmPassword;
 }

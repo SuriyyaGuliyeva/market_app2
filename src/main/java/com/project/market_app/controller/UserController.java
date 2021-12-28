@@ -33,13 +33,13 @@ public class UserController {
 
     // add user
     @PostMapping("add")
-    public void addUser(@RequestBody @Valid AddUserDto userDto) {
+    public void addUser(@Valid @RequestBody AddUserDto userDto) {
         userService.addUser(userDto);
     }
 
     // update user
     @PutMapping("/update")
-    public void updateUser(@RequestBody @Valid UpdateUserDto userDto) {
+    public void updateUser(@Valid @RequestBody UpdateUserDto userDto) {
         userService.updateUser(userDto);
     }
 

@@ -6,6 +6,7 @@ import com.project.market_app.dto.UpdateBrandDto;
 import com.project.market_app.service.inter.BrandService;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,13 +33,13 @@ public class BrandController {
 
     // add brand
     @PostMapping("/add")
-    public void addBrand(@RequestBody AddBrandDto brandDto) {
+    public void addBrand(@Valid @RequestBody AddBrandDto brandDto) {
         brandService.addbrand(brandDto);
     }
 
     // update brand
     @PutMapping("/update")
-    public void updateBrand(@RequestBody UpdateBrandDto brandDto) {
+    public void updateBrand(@Valid @RequestBody UpdateBrandDto brandDto) {
         brandService.updateBrand(brandDto);
     }
 

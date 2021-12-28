@@ -18,7 +18,7 @@ public class OrderProduct {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int quanyity;
+    private int quantity;
     private BigDecimal price;
     private BigDecimal discountPrice;
 
