@@ -28,7 +28,7 @@ public class ProductServiceImpl implements ProductService {
     public List<ProductInfoDto> productList() {
         List<Product> products = productRepository.productList();
 
-        // burada info ve add-de etdiyimiz kimi brand-i map etmeliyik.
+        // burada info ve add-de etdiyimiz kimi brand-i map etmeliyik - SONDA BUNA BAX.
         List<ProductInfoDto> productsDto = products.stream()
                 .map(product -> modelMapper.map(product, ProductInfoDto.class)).collect(Collectors.toList());
 

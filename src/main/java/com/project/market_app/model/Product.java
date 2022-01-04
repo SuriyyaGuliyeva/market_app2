@@ -24,9 +24,10 @@ public class Product {
     private String name;
     private BigDecimal balance;
 
-    //    @OneToOne(cascade={CascadeType.DETACH, CascadeType.MERGE,
+        @OneToOne(cascade={CascadeType.DETACH, CascadeType.MERGE,
+            CascadeType.PERSIST, CascadeType.REFRESH})
+//    @OneToOne(fetch = FetchType.EAGER, cascade = {CascadeType.DETACH, CascadeType.MERGE,
 //            CascadeType.PERSIST, CascadeType.REFRESH})
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name="brand_id", insertable = false, updatable = false)
     private Brand brand;
 

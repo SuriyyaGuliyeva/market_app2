@@ -3,7 +3,6 @@ package com.project.market_app.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -13,7 +12,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name="users")
+@Table(name = "users", uniqueConstraints = @UniqueConstraint(name = "email_unique", columnNames = "email"))
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,8 +33,7 @@ public class User {
     @Size(min = 8, message = "Password should have at least 8 characters")
     private String confirmPassword;
 
-    @OneToMany
-    @JoinColumn(name="order_id", nullable = false)
-    @ToString.Exclude
+    @OneToMany // mappedBy added: 04.01.2022
+    @JoinColumn(name = "order_id") // nullable = false var idi
     private List<Order> orders;
 }

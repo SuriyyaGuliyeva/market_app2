@@ -37,14 +37,12 @@ public class Order {
     @NotNull(message = "Price cannot be null")
     private BigDecimal price;
 
-    @OneToOne(cascade={CascadeType.DETACH, CascadeType.MERGE, CascadeType.MERGE,
-            CascadeType.PERSIST, CascadeType.REFRESH})
-    @JoinColumn(name="user_id", nullable = false)
-    @ToString.Exclude
+    @OneToOne(fetch = FetchType.EAGER) //cascade = CascadeType.ALL, fetch = FetchType.EAGER
+    @JoinColumn(name="user_id") // insertable = false, updatable = false
+    @NotNull(message = "User ID cannot be null")
     private User user;
 
     @OneToMany
     @JoinColumn(name="order_id")
-    @ToString.Exclude
     private List<OrderProduct> orderProducts;
 }

@@ -2,6 +2,7 @@ package com.project.market_app.service.inter;
 
 import com.project.market_app.dto.AddOrderDto;
 import com.project.market_app.dto.OrderInfoDto;
+import com.project.market_app.dto.ProductInfoDto;
 import com.project.market_app.dto.UpdateOrderDto;
 import org.springframework.stereotype.Service;
 

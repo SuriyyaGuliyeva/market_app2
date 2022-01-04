@@ -26,5 +26,6 @@ public class AddOrderDto {
     @NotNull(message = "Price cannot be null")
     private BigDecimal price;
 
-//    private Long userId;
+//    @NotNull(message = "User ID cannot be null")
+    private UserInfoDto userInfo;
 }

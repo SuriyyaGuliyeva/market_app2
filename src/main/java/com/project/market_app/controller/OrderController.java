@@ -1,8 +1,6 @@
 package com.project.market_app.controller;
 
-import com.project.market_app.dto.AddOrderDto;
-import com.project.market_app.dto.OrderInfoDto;
-import com.project.market_app.dto.UpdateOrderDto;
+import com.project.market_app.dto.*;
 import com.project.market_app.service.inter.OrderService;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,7 +25,7 @@ public class OrderController {
 
     // order info
     @GetMapping("/{id}")
-    public OrderInfoDto orderInfoDto(@PathVariable("id") Long id) {
+    public OrderInfoDto orderInfo(@PathVariable("id") Long id) {
         OrderInfoDto orderInfo = orderService.orderInfo(id);
         return orderInfo;
     }
